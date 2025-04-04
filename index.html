@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohsen Amiribesheli | AI Consultancy and Advisory Lead</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #1a237e;
+            --secondary-color: #0d47a1;
+            --accent-color: #2196f3;
+            --text-color: #333;
+            --light-bg: #f8f9fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            text-align: center;
+            padding: 4rem 0;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></svg>') repeat;
+            opacity: 0.1;
+        }
+
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            border: 4px solid white;
+            background-color: #fff;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .title {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .bio {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            position: relative;
+            z-index: 1;
+            line-height: 1.8;
+        }
+
+        .bio p {
+            margin-bottom: 1.5rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .bio p:last-child {
+            margin-bottom: 0;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .social-link {
+            color: white;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.1);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .cta {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 3rem;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+        }
+
+        .cta p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            color: var(--text-color);
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .contact-btn, .course-btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .contact-btn {
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+        }
+
+        .course-btn {
+            background: linear-gradient(90deg, #ff6b6b, #ff8e8e);
+        }
+
+        .contact-btn:hover, .course-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .expertise {
+            margin-top: 3rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .expertise-item {
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .expertise-item i {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .social-links {
+                gap: 1.5rem;
+            }
+
+            .expertise {
+                grid-template-columns: 1fr;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+
+            .contact-btn, .course-btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="profile-image">
+                <img src="./pic.jpeg" alt="Mohsen Amiribesheli">
+            </div>
+            <h1>Mohsen Amiribesheli</h1>
+            <p class="title">AI Consultancy and Advisory Lead at AI Labs, HCLTech</p>
+            <div class="bio">
+                <p>As the AI Consultancy and Advisory Lead at HCL AI Labs Technologies, I drive transformational change by leveraging cutting-edge AI and cloud-native solutions. With a focus on MLOps and Generative AI, I am at the forefront of revolutionising industries such as manufacturing, FinTech, and life sciences. My work empowers organisations to streamline operations, enhance decision-making, and unlock the full potential of AI technologies.</p>
+                
+                <p>Armed with a PhD in AI and a wealth of experience leading global projects, I specialise in orchestrating scalable AI systems that deliver tangible business outcomes. From integrating advanced Generative AI models to pioneering hybrid cloud infrastructures, my work consistently pushes the boundaries of what AI can achieve. I lead high-impact initiatives that optimise workflows, accelerate innovation, and bring strategic value to enterprises.</p>
+                
+                <p>Beyond technical implementation, I am deeply committed to mentoring the next generation of AI leaders and advancing the field through research and thought leadership. Whether through public speaking or academic publications, I aim to inspire and guide the evolution of AI across industries.</p>
+                
+                <p>Please feel free to talk to me about AI-driven transformation, innovative collaborations, or the future of technology.</p>
+            </div>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/mobesheli/" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/mobesheli" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                <a href="https://x.com/amirimohsen" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                <a href="https://besheli.wordpress.com/" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-wordpress"></i></a>
+                <a href="mailto:besheli@outlook.com" class="social-link"><i class="fas fa-envelope"></i></a>
+                <a href="https://scholar.google.co.uk/citations?user=hm3nTqgAAAAJ&hl=en" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fas fa-graduation-cap"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="expertise">
+            <div class="expertise-item">
+                <i class="fas fa-cogs"></i>
+                <h3>AI & Cloud Solutions</h3>
+                <p>Leading the implementation of cutting-edge AI and cloud-native solutions across manufacturing, FinTech, and life sciences industries</p>
+            </div>
+            <div class="expertise-item">
+                <i class="fas fa-robot"></i>
+                <h3>Generative AI & MLOps</h3>
+                <p>Expertise in implementing and scaling advanced Generative AI models and MLOps solutions for enterprise applications</p>
+            </div>
+            <div class="expertise-item">
+                <i class="fas fa-graduation-cap"></i>
+                <h3>Research & Leadership</h3>
+                <p>PhD in AI with a focus on advancing the field through research, thought leadership, and mentoring future AI leaders</p>
+            </div>
+        </div>
+
+        <div class="cta">
+            <p>Let's discuss AI-driven transformation, innovative collaborations, or the future of technology.</p>
+            <div class="button-group">
+                <a href="mailto:besheli@outlook.com" class="contact-btn">Get in Touch</a>
+                <a href="https://kodekloud.com/courses/generative-ai-in-practice-advanced-insights-and-operations" class="course-btn" target="_blank" rel="noopener noreferrer">View My Course</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html> 
