@@ -1,302 +1,968 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-GB">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohsen Amiribesheli | AI Consultancy and Advisory Lead</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        :root {
-            --primary-color: #1a237e;
-            --secondary-color: #0d47a1;
-            --accent-color: #2196f3;
-            --text-color: #333;
-            --light-bg: #f8f9fa;
-        }
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090b0d">
+  <title>besheli.com</title>
+  <meta name="description" content="Mohsen Amiribesheli, PhD. Director, AI Labs at HCLTech, and author of Agentic AI Engineering (Packt).">
+  <link rel="canonical" href="https://besheli.com/">
+  <meta property="og:title" content="besheli.com | Mohsen Amiribesheli">
+  <meta property="og:description" content="Designing agent systems that enterprises can trust in production.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://besheli.com/">
+  <meta property="og:image" content="https://besheli.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="besheli.com | Mohsen Amiribesheli">
+  <meta name="twitter:description" content="Designing agent systems that enterprises can trust in production.">
+  <meta name="twitter:image" content="https://besheli.com/og-image.png">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%23090b0d'/%3E%3Ccircle cx='48' cy='16' r='6' fill='%23d8ff4f'/%3E%3Cpath d='M15 45V19h9l8 13 8-13h9v26h-8V31l-9 14-9-14v14z' fill='%23f2f0e8'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Mohsen Amiribesheli",
+    "honorificSuffix": "PhD",
+    "url": "https://besheli.com/",
+    "image": "https://besheli.com/portrait.jpeg",
+    "jobTitle": "Director, AI Labs",
+    "worksFor": { "@type": "Organization", "name": "HCLTech" },
+    "sameAs": [
+      "https://www.linkedin.com/in/mobesheli/",
+      "https://github.com/mobesheli",
+      "https://x.com/amirimohsen",
+      "https://scholar.google.co.uk/citations?user=hm3nTqgAAAAJ&hl=en"
+    ],
+    "knowsAbout": ["Agentic AI", "Agent architecture", "AI governance", "Multi-agent systems"]
+  }
+  </script>
+  <style>
+    :root {
+      --night: #090b0d;
+      --night-soft: #111417;
+      --chalk: #f2f0e8;
+      --paper: #ebe8df;
+      --ink: #111315;
+      --muted: #9b9e9d;
+      --muted-dark: #606461;
+      --line: rgba(255,255,255,.13);
+      --line-dark: rgba(17,19,21,.16);
+      --signal: #d8ff4f;
+      --blue: #7098ff;
+      --orange: #ff805b;
+      --serif: "Syne", sans-serif;
+      --sans: "Manrope", sans-serif;
+      --mono: "DM Mono", monospace;
+      --radius: 22px;
+    }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    section[id] { scroll-margin-top: 84px; }
+    body {
+      margin: 0;
+      background: var(--night);
+      color: var(--chalk);
+      font: 400 16px/1.65 var(--sans);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--light-bg);
-        }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 30;
+      pointer-events: none;
+      opacity: .035;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.65'/%3E%3C/svg%3E");
+    }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
+    ::selection { background: var(--signal); color: var(--ink); }
+    a { color: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid var(--signal);
+      outline-offset: 4px;
+    }
 
-        header {
-            text-align: center;
-            padding: 4rem 0;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
+    .shell { width: min(1440px, calc(100% - 48px)); margin-inline: auto; }
+    .wide { width: min(1240px, calc(100% - 48px)); margin-inline: auto; }
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0;
+      font: 500 11px/1 var(--mono);
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { content: ""; width: 25px; height: 1px; background: currentColor; }
+    .section-index { font: 400 11px/1 var(--mono); letter-spacing: .12em; opacity: .55; }
 
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></svg>') repeat;
-            opacity: 0.1;
-        }
+    /* Navigation */
+    .site-nav {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 20;
+      background: rgba(9,11,13,.76);
+      border-bottom: 1px solid transparent;
+      backdrop-filter: blur(18px);
+      transition: border-color .25s ease, background .25s ease;
+    }
+    .site-nav.scrolled { border-color: var(--line); background: rgba(9,11,13,.92); }
+    .nav-inner {
+      min-height: 74px;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+    }
+    .brand {
+      justify-self: start;
+      font: 700 16px/1 var(--serif);
+      letter-spacing: -.02em;
+      text-decoration: none;
+    }
+    .brand span { color: var(--signal); }
+    .nav-links { display: flex; align-items: center; gap: 30px; }
+    .nav-links a {
+      position: relative;
+      color: #b7bab8;
+      font: 500 12px/1 var(--mono);
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      transition: color .2s ease;
+    }
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 -9px;
+      height: 1px;
+      background: var(--signal);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .25s ease;
+    }
+    .nav-links a:hover, .nav-links a.active { color: #fff; }
+    .nav-links a:hover::after, .nav-links a.active::after { transform: scaleX(1); }
+    .nav-status {
+      justify-self: end;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: #b7bab8;
+      font: 400 11px/1 var(--mono);
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+    .status-dot {
+      width: 8px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: var(--signal);
+      box-shadow: 0 0 0 6px rgba(216,255,79,.09), 0 0 18px rgba(216,255,79,.6);
+      animation: breathe 2.8s ease-in-out infinite;
+    }
+    .menu-toggle { display: none; }
 
-        .profile-image {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            margin: 0 auto 1.5rem;
-            border: 4px solid white;
-            background-color: #fff;
-            position: relative;
-            z-index: 1;
-            overflow: hidden;
-        }
+    /* Hero */
+    .hero {
+      min-height: 100svh;
+      padding: 148px 0 52px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      isolation: isolate;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.32fr) minmax(330px, .68fr);
+      gap: clamp(40px, 7vw, 110px);
+      align-items: center;
+    }
+    .hero-copy { position: relative; z-index: 2; }
+    .hero .eyebrow { color: var(--signal); margin-bottom: 28px; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 {
+      max-width: 870px;
+      margin-bottom: 30px;
+      font: 700 clamp(56px, 7.65vw, 122px)/.87 var(--serif);
+      letter-spacing: -.072em;
+      text-wrap: balance;
+    }
+    h1 em { color: var(--signal); font-style: normal; }
+    .hero-intro {
+      max-width: 635px;
+      margin: 0;
+      color: #b7bab8;
+      font-size: clamp(17px, 1.45vw, 21px);
+      line-height: 1.6;
+    }
+    .hero-intro strong { color: #fff; font-weight: 600; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 13px; margin-top: 37px; }
+    .button {
+      min-height: 52px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 0 21px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: transparent;
+      color: #fff;
+      font: 600 13px/1 var(--sans);
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform .25s ease, background .25s ease, color .25s ease, border-color .25s ease;
+    }
+    .button:hover { transform: translateY(-3px); border-color: rgba(255,255,255,.5); }
+    .button.primary { background: var(--signal); color: var(--ink); border-color: var(--signal); }
+    .button.primary:hover { background: #e5ff80; box-shadow: 0 10px 35px rgba(216,255,79,.15); }
+    .button .arrow { font-size: 17px; transition: transform .25s ease; }
+    .button:hover .arrow { transform: translate(3px,-3px); }
 
-        .profile-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
+    .portrait-stage { position: relative; z-index: 1; padding: 20px; }
+    .portrait-frame {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: .82;
+      border-radius: 220px 220px 22px 22px;
+      border: 1px solid var(--line);
+      background: var(--night-soft);
+    }
+    .portrait-frame::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 56%, rgba(7,9,10,.82));
+      pointer-events: none;
+    }
+    .portrait-frame img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: 50% 42%;
+      filter: saturate(.72) contrast(1.05);
+      transition: transform .7s cubic-bezier(.2,.8,.2,1), filter .7s ease;
+    }
+    .portrait-frame:hover img { transform: scale(1.035); filter: saturate(.9) contrast(1.02); }
+    .portrait-caption {
+      position: absolute;
+      inset: auto 25px 22px;
+      z-index: 2;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 18px;
+      color: #fff;
+    }
+    .portrait-caption strong { display: block; font: 600 18px/1.2 var(--serif); }
+    .portrait-caption span { color: #c6c8c7; font: 400 10px/1.4 var(--mono); text-transform: uppercase; letter-spacing: .08em; }
+    .portrait-tag {
+      position: absolute;
+      top: 12%;
+      left: -18px;
+      z-index: 3;
+      padding: 12px 15px;
+      border: 1px solid rgba(216,255,79,.5);
+      border-radius: 999px;
+      background: rgba(9,11,13,.8);
+      color: var(--signal);
+      backdrop-filter: blur(12px);
+      font: 500 10px/1 var(--mono);
+      letter-spacing: .11em;
+      text-transform: uppercase;
+      transform: rotate(-7deg);
+    }
+    .orbit { position: absolute; inset: 0; z-index: -1; pointer-events: none; }
+    .orbit::before, .orbit::after {
+      content: "";
+      position: absolute;
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 50%;
+    }
+    .orbit::before { width: 100%; aspect-ratio: 1; top: -50px; left: 0; }
+    .orbit::after { width: 80%; aspect-ratio: 1; right: 0; bottom: -60px; }
 
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            position: relative;
-            z-index: 1;
-        }
+    .hero-foot {
+      margin-top: 65px;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: end;
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
+    }
+    .hero-foot p { margin: 0; color: #8f9391; font: 400 11px/1.5 var(--mono); letter-spacing: .06em; text-transform: uppercase; }
+    .hero-foot p:last-child { text-align: right; }
+    .scroll-cue { color: var(--signal); text-decoration: none; animation: nudge 2.2s ease-in-out infinite; }
 
-        .title {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            margin-bottom: 2rem;
-            position: relative;
-            z-index: 1;
-        }
+    /* Thesis */
+    .thesis-section {
+      background: var(--paper);
+      color: var(--ink);
+      padding: clamp(92px, 12vw, 180px) 0;
+    }
+    .thesis-head { display: grid; grid-template-columns: .35fr 1.65fr; gap: 50px; }
+    .thesis-head .eyebrow { color: var(--muted-dark); align-self: start; margin-top: 13px; }
+    .statement {
+      max-width: 1050px;
+      margin: 0;
+      font: 600 clamp(41px, 6.15vw, 88px)/1.01 var(--serif);
+      letter-spacing: -.06em;
+      text-wrap: balance;
+    }
+    .statement .quiet { color: #aaa99f; }
+    .statement mark { background: transparent; color: var(--ink); position: relative; white-space: nowrap; }
+    .statement mark::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      inset: 60% -2px 4px;
+      background: var(--signal);
+      transform: rotate(-1deg);
+    }
+    .principles {
+      margin-top: clamp(70px, 9vw, 120px);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--line-dark);
+    }
+    .principle { padding: 26px 34px 0 0; border-right: 1px solid var(--line-dark); }
+    .principle + .principle { padding-left: 34px; }
+    .principle:last-child { border-right: 0; }
+    .principle .num { display: block; margin-bottom: 54px; color: var(--muted-dark); font: 400 11px/1 var(--mono); }
+    .principle h3 { margin-bottom: 12px; font: 650 25px/1.15 var(--serif); letter-spacing: -.035em; }
+    .principle p { margin: 0; color: #5f625f; font-size: 15px; line-height: 1.7; }
 
-        .bio {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: left;
-            font-size: 1.1rem;
-            margin-bottom: 3rem;
-            position: relative;
-            z-index: 1;
-            line-height: 1.8;
-        }
+    /* Book */
+    .book-section { position: relative; overflow: hidden; padding: clamp(92px, 11vw, 160px) 0; }
+    .book-section::before {
+      content: "";
+      position: absolute;
+      width: 640px;
+      aspect-ratio: 1;
+      top: -220px;
+      right: -180px;
+      border: 1px solid rgba(216,255,79,.15);
+      border-radius: 50%;
+      box-shadow: 0 0 100px rgba(216,255,79,.035) inset;
+    }
+    .section-topline {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 76px;
+      padding-bottom: 17px;
+      border-bottom: 1px solid var(--line);
+      color: #a4a7a5;
+    }
+    .section-topline .eyebrow { color: var(--signal); }
+    .book-grid { display: grid; grid-template-columns: minmax(300px,.78fr) minmax(0,1.22fr); gap: clamp(60px, 9vw, 140px); align-items: center; }
+    .book-object { position: relative; max-width: 430px; margin-inline: auto; perspective: 1200px; }
+    .book-cover {
+      position: relative;
+      aspect-ratio: .72;
+      padding: 36px 34px 30px 43px;
+      overflow: hidden;
+      border-radius: 4px 13px 13px 4px;
+      background: var(--signal);
+      color: var(--ink);
+      box-shadow: -14px 16px 0 #71842e, -30px 38px 65px rgba(0,0,0,.52);
+      transform: rotateY(9deg) rotateZ(-2deg);
+      transform-origin: left center;
+      transition: transform .65s cubic-bezier(.2,.8,.2,1), box-shadow .65s ease;
+    }
+    .book-object:hover .book-cover { transform: rotateY(0) rotateZ(0) translateY(-8px); box-shadow: -8px 13px 0 #71842e, -25px 42px 80px rgba(0,0,0,.48); }
+    .book-cover::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 13px; background: rgba(0,0,0,.17); }
+    .book-cover::after {
+      content: "";
+      position: absolute;
+      width: 300px;
+      aspect-ratio: 1;
+      right: -105px;
+      bottom: -110px;
+      border: 1px solid rgba(17,19,21,.35);
+      border-radius: 50%;
+      box-shadow: 0 0 0 35px rgba(17,19,21,.07), 0 0 0 70px rgba(17,19,21,.05);
+    }
+    .cover-kicker { font: 500 10px/1.3 var(--mono); letter-spacing: .13em; text-transform: uppercase; }
+    .cover-title { margin-top: 23px; font: 700 clamp(38px,4vw,57px)/.93 var(--serif); letter-spacing: -.055em; }
+    .cover-map { position: absolute; width: 60%; right: 17px; bottom: 88px; }
+    .cover-author { position: absolute; left: 43px; bottom: 30px; font: 600 13px/1.2 var(--sans); }
+    .agent-map path { stroke-dasharray: 4 7; animation: flow 8s linear infinite; }
+    .agent-map circle { transform-box: fill-box; transform-origin: center; animation: nodePulse 3s ease-in-out infinite; }
+    .agent-map circle:nth-of-type(2) { animation-delay: .45s; }
+    .agent-map circle:nth-of-type(3) { animation-delay: .9s; }
+    .agent-map circle:nth-of-type(4) { animation-delay: 1.35s; }
+    .book-content h2 { max-width: 700px; margin: 0 0 24px; font: 650 clamp(48px,6vw,86px)/.92 var(--serif); letter-spacing: -.06em; }
+    .book-deck { max-width: 650px; color: #b3b6b4; font-size: clamp(18px,1.6vw,22px); line-height: 1.6; }
+    .book-meta { display: flex; gap: 10px; flex-wrap: wrap; margin: 28px 0 35px; }
+    .pill { padding: 9px 13px; border: 1px solid var(--line); border-radius: 999px; color: #b8bbb9; font: 400 11px/1 var(--mono); letter-spacing: .05em; text-transform: uppercase; }
+    .pill.signal { border-color: rgba(216,255,79,.45); color: var(--signal); }
+    .book-copy { max-width: 700px; color: #9fa3a1; }
+    .book-copy p { margin-bottom: 17px; }
+    .book-copy strong { color: #fff; font-weight: 600; }
 
-        .bio p {
-            margin-bottom: 1.5rem;
-            color: rgba(255, 255, 255, 0.9);
-        }
+    /* Architecture */
+    .architecture { padding: 0 0 clamp(100px,12vw,170px); }
+    .architecture-card {
+      position: relative;
+      min-height: 740px;
+      padding: 52px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #0e1113;
+    }
+    .architecture-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: .25;
+      background-image: linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px), linear-gradient(90deg,rgba(255,255,255,.06) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: linear-gradient(to bottom, black, transparent 88%);
+    }
+    .architecture-head { position: relative; z-index: 2; display: flex; align-items: start; justify-content: space-between; gap: 40px; }
+    .architecture-head h2 { max-width: 680px; margin: 18px 0 0; font: 650 clamp(39px,5vw,70px)/.98 var(--serif); letter-spacing: -.055em; }
+    .architecture-head .eyebrow { color: var(--blue); }
+    .architecture-note { max-width: 310px; margin: 5px 0 0; color: #929795; font-size: 14px; }
+    .system-map { position: absolute; inset: 230px 55px 55px; }
+    .map-core {
+      position: absolute;
+      inset: 50% auto auto 50%;
+      width: 210px;
+      aspect-ratio: 1;
+      transform: translate(-50%,-50%);
+      border: 1px solid rgba(216,255,79,.55);
+      border-radius: 50%;
+      background: radial-gradient(circle at 50% 50%, rgba(216,255,79,.2), rgba(216,255,79,.03) 62%, transparent 63%);
+      display: grid;
+      place-content: center;
+      text-align: center;
+      box-shadow: 0 0 70px rgba(216,255,79,.06);
+    }
+    .map-core::before, .map-core::after { content:""; position:absolute; border:1px solid rgba(216,255,79,.13); border-radius:50%; inset:-37px; animation: spin 18s linear infinite; }
+    .map-core::after { inset:-76px; border-style:dashed; animation-direction:reverse; animation-duration:26s; }
+    .map-core span { color: var(--signal); font: 500 10px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; }
+    .map-core strong { margin-top: 8px; font: 600 23px/1.1 var(--serif); }
+    .map-node {
+      position: absolute;
+      width: min(235px, 22%);
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      background: rgba(17,20,23,.86);
+      backdrop-filter: blur(10px);
+      transition: border-color .25s ease, transform .25s ease;
+    }
+    .map-node:hover { transform: translateY(-4px); border-color: rgba(112,152,255,.55); }
+    .map-node small { display:block; margin-bottom: 25px; color: var(--blue); font: 500 9px/1 var(--mono); letter-spacing:.12em; text-transform:uppercase; }
+    .map-node h3 { margin:0 0 7px; font: 600 17px/1.1 var(--serif); }
+    .map-node p { margin:0; color:#858a87; font-size:12px; line-height:1.5; }
+    .node-1 { top: 0; left: 3%; }
+    .node-2 { top: 0; right: 3%; }
+    .node-3 { bottom: 0; left: 10%; }
+    .node-4 { bottom: 0; right: 10%; }
+    .node-5 { bottom: 0; left: 50%; transform: translateX(-50%); }
+    .map-line { position:absolute; height:1px; background:linear-gradient(90deg,transparent,rgba(112,152,255,.5),transparent); transform-origin:left center; }
+    .line-1 { width:34%; top:25%; left:22%; transform:rotate(22deg); }
+    .line-2 { width:34%; top:25%; right:22%; transform:rotate(-22deg); }
+    .line-3 { width:33%; bottom:25%; left:28%; transform:rotate(-29deg); }
+    .line-4 { width:33%; bottom:25%; right:28%; transform:rotate(29deg); }
+    .line-5 { width:16%; bottom:24%; left:50%; transform:rotate(90deg); }
 
-        .bio p:last-child {
-            margin-bottom: 0;
-        }
+    /* Work */
+    .work-section { background: var(--chalk); color: var(--ink); padding: clamp(95px,12vw,175px) 0; }
+    .work-head { display:grid; grid-template-columns:.36fr 1.64fr; gap:50px; align-items:start; }
+    .work-head .eyebrow { color: var(--muted-dark); margin-top: 13px; }
+    .work-title { max-width: 970px; margin:0; font:650 clamp(44px,6.4vw,90px)/.98 var(--serif); letter-spacing:-.062em; }
+    .work-title span { color:#aaa9a2; }
+    .work-intro { max-width:730px; margin:35px 0 0 auto; color:#555955; font-size:18px; line-height:1.75; }
+    .work-intro strong { color:var(--ink); }
+    .capabilities { margin-top:90px; border-top:1px solid var(--line-dark); }
+    .capability {
+      display:grid;
+      grid-template-columns:90px .9fr 1.1fr 36px;
+      gap:25px;
+      align-items:center;
+      padding:34px 0;
+      border-bottom:1px solid var(--line-dark);
+      transition: padding .25s ease, background .25s ease;
+    }
+    .capability:hover { padding-inline:18px; background:rgba(255,255,255,.45); }
+    .capability .num { color:#777b77; font:400 11px/1 var(--mono); }
+    .capability h3 { margin:0; font:600 clamp(22px,2.4vw,34px)/1.1 var(--serif); letter-spacing:-.035em; }
+    .capability p { margin:0; color:#656965; font-size:14px; max-width:540px; }
+    .capability .go { font-size:25px; transition:transform .25s ease; }
+    .capability:hover .go { transform:translate(5px,-5px); }
 
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 2rem;
-            position: relative;
-            z-index: 1;
-        }
+    /* Field notes */
+    .notes-section { padding: clamp(95px,11vw,155px) 0; }
+    .notes-head { display:flex; justify-content:space-between; align-items:end; gap:40px; margin-bottom:58px; }
+    .notes-head .eyebrow { color:var(--orange); margin-bottom:20px; }
+    .notes-head h2 { margin:0; font:650 clamp(46px,5.7vw,78px)/.95 var(--serif); letter-spacing:-.055em; }
+    .notes-head p { max-width:360px; margin:0 0 5px; color:#909492; }
+    .note-grid { display:grid; grid-template-columns:1.15fr .85fr .85fr; gap:18px; }
+    .note-card {
+      min-height:380px;
+      padding:29px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      border:1px solid var(--line);
+      border-radius:18px;
+      text-decoration:none;
+      position:relative;
+      overflow:hidden;
+      transition:transform .35s ease, border-color .35s ease;
+    }
+    .note-card:hover { transform:translateY(-7px); border-color:rgba(255,255,255,.4); }
+    .note-card.featured { background:var(--blue); color:#0c1220; border-color:var(--blue); }
+    .note-card:nth-child(2) { background:#15191c; }
+    .note-card:nth-child(3) { background:#15191c; }
+    .note-type { display:flex; justify-content:space-between; align-items:center; font:500 10px/1 var(--mono); letter-spacing:.1em; text-transform:uppercase; }
+    .note-type span:last-child { font-size:18px; }
+    .note-card h3 { max-width:460px; margin:0; font:600 clamp(28px,3vw,43px)/1.04 var(--serif); letter-spacing:-.045em; }
+    .note-card:not(.featured) h3 { font-size:clamp(25px,2.3vw,34px); }
+    .note-card p { margin:15px 0 0; color:rgba(12,18,32,.7); font-size:14px; }
+    .note-card:not(.featured) p { color:#858a87; }
+    .note-orbit { position:absolute; width:260px; aspect-ratio:1; right:-90px; top:-90px; border:1px solid rgba(12,18,32,.2); border-radius:50%; box-shadow:0 0 0 30px rgba(12,18,32,.04),0 0 0 60px rgba(12,18,32,.025); }
 
-        .social-link {
-            color: white;
-            font-size: 1.5rem;
-            transition: all 0.3s ease;
-            background: rgba(255, 255, 255, 0.1);
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-        }
+    /* Contact */
+    .contact-section { background:var(--signal); color:var(--ink); padding:clamp(90px,11vw,150px) 0 36px; }
+    .contact-top { display:grid; grid-template-columns:1.45fr .55fr; gap:60px; align-items:end; }
+    .contact-section .eyebrow { margin-bottom:25px; }
+    .contact-section h2 { max-width:1020px; margin:0; font:700 clamp(54px,8.3vw,126px)/.84 var(--serif); letter-spacing:-.075em; }
+    .contact-aside { padding-bottom:8px; }
+    .contact-aside p { margin:0 0 25px; font-size:16px; }
+    .contact-section .button { color:var(--ink); border-color:rgba(17,19,21,.35); }
+    .contact-section .button:hover { border-color:var(--ink); }
+    .contact-links { margin-top:100px; padding-top:20px; border-top:1px solid rgba(17,19,21,.25); display:flex; justify-content:space-between; gap:25px; flex-wrap:wrap; }
+    .contact-links div { display:flex; gap:25px; flex-wrap:wrap; }
+    .contact-links a, .contact-links span { font:500 11px/1.5 var(--mono); letter-spacing:.07em; text-transform:uppercase; text-decoration:none; }
+    .contact-links a:hover { text-decoration:underline; text-underline-offset:4px; }
+    .copy-status { min-width:52px; }
 
-        .social-link:hover {
-            transform: translateY(-3px);
-            background: rgba(255, 255, 255, 0.2);
-        }
+    /* Reveal and motion */
+    [data-reveal] { opacity:0; transform:translateY(28px); transition:opacity .75s ease, transform .75s cubic-bezier(.2,.7,.2,1); }
+    [data-reveal].visible { opacity:1; transform:none; }
+    [data-delay="1"] { transition-delay:.1s; }
+    [data-delay="2"] { transition-delay:.2s; }
+    [data-delay="3"] { transition-delay:.3s; }
+    @keyframes breathe { 50% { transform:scale(.72); opacity:.65; } }
+    @keyframes nudge { 50% { transform:translateY(5px); } }
+    @keyframes flow { to { stroke-dashoffset:-110; } }
+    @keyframes nodePulse { 50% { transform:scale(1.22); } }
+    @keyframes spin { to { transform:rotate(360deg); } }
 
-        .cta {
-            text-align: center;
-            margin-top: 3rem;
-            padding: 3rem;
-            background-color: white;
-            border-radius: 15px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            position: relative;
-            overflow: hidden;
-        }
+    /* Responsive */
+    @media (max-width: 1050px) {
+      .nav-inner { grid-template-columns:1fr auto; }
+      .nav-links { display:none; }
+      .hero-grid { grid-template-columns:minmax(0,1.12fr) minmax(300px,.88fr); gap:45px; }
+      .hero h1 { font-size:clamp(58px,8vw,88px); }
+      .principles { grid-template-columns:1fr; }
+      .principle, .principle + .principle { padding:28px 0; border-right:0; border-bottom:1px solid var(--line-dark); display:grid; grid-template-columns:80px .6fr 1fr; gap:25px; align-items:start; }
+      .principle:last-child { border-bottom:0; }
+      .principle .num { margin:8px 0 0; }
+      .principle p { margin-top:3px; }
+      .note-grid { grid-template-columns:1fr 1fr; }
+      .note-card.featured { grid-column:1/-1; min-height:410px; }
+      .contact-top { grid-template-columns:1fr; }
+      .contact-aside { max-width:500px; }
+    }
 
-        .cta::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
-        }
+    @media (max-width: 800px) {
+      .shell, .wide { width:min(100% - 34px, 1240px); }
+      .site-nav { background:rgba(9,11,13,.92); }
+      .nav-inner { min-height:65px; }
+      .nav-status { display:none; }
+      .menu-toggle {
+        justify-self:end;
+        display:inline-flex;
+        align-items:center;
+        gap:8px;
+        padding:8px 0;
+        border:0;
+        background:transparent;
+        color:#fff;
+        font:500 11px/1 var(--mono);
+        letter-spacing:.08em;
+        text-transform:uppercase;
+      }
+      .menu-toggle i, .menu-toggle i::before { display:block; width:18px; height:1px; background:currentColor; content:""; transition:transform .25s ease; }
+      .menu-toggle i::before { transform:translateY(5px); }
+      .site-nav.menu-open .menu-toggle i { transform:translateY(2px) rotate(45deg); }
+      .site-nav.menu-open .menu-toggle i::before { transform:rotate(-90deg); }
+      .site-nav.menu-open .nav-links {
+        position:absolute;
+        inset:65px 0 auto;
+        display:flex;
+        flex-direction:column;
+        align-items:flex-start;
+        gap:0;
+        padding:18px 17px 24px;
+        background:rgba(9,11,13,.98);
+        border-bottom:1px solid var(--line);
+      }
+      .site-nav.menu-open .nav-links a { width:100%; padding:16px 0; border-bottom:1px solid var(--line); }
+      .hero { min-height:auto; padding:110px 0 34px; }
+      .hero-grid { grid-template-columns:1fr; }
+      .portrait-stage { order:-1; width:min(88%,430px); margin-inline:auto; padding:10px; }
+      .portrait-tag { left:-5px; }
+      h1 { font-size:clamp(57px,15vw,90px); }
+      .hero-foot { grid-template-columns:1fr auto; margin-top:50px; }
+      .hero-foot p:last-child { display:none; }
+      .thesis-head, .work-head { grid-template-columns:1fr; gap:28px; }
+      .statement { font-size:clamp(38px,10vw,67px); }
+      .principle, .principle + .principle { grid-template-columns:50px 1fr; }
+      .principle p { grid-column:2; }
+      .book-grid { grid-template-columns:1fr; }
+      .book-object { width:min(78%,400px); }
+      .architecture-card { min-height:auto; padding:30px 23px; }
+      .architecture-head { display:block; }
+      .architecture-note { margin-top:25px; }
+      .system-map { position:relative; inset:auto; margin-top:55px; display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+      .map-core { grid-column:1/-1; position:relative; inset:auto; transform:none; margin:30px auto 52px; }
+      .map-node { position:relative; inset:auto!important; width:auto; transform:none; }
+      .map-line { display:none; }
+      .capability { grid-template-columns:48px 1fr 30px; gap:15px; }
+      .capability p { grid-column:2; }
+      .capability .go { grid-column:3; grid-row:1; }
+      .notes-head { display:block; }
+      .notes-head p { margin-top:25px; }
+      .contact-links { margin-top:70px; }
+    }
 
-        .cta p {
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-            color: var(--text-color);
-        }
+    @media (max-width: 560px) {
+      .hero-actions .button { width:100%; }
+      .portrait-stage { width:100%; }
+      .portrait-frame { aspect-ratio:.9; }
+      .hero h1 { letter-spacing:-.064em; }
+      .hero-intro { font-size:16px; }
+      .principle, .principle + .principle { display:block; }
+      .principle .num { margin:0 0 24px; }
+      .principle p { margin-top:12px; }
+      .book-object { width:91%; }
+      .book-cover { padding:29px 27px 27px 36px; }
+      .cover-author { left:36px; }
+      .architecture-head h2 { font-size:40px; }
+      .system-map { grid-template-columns:1fr; }
+      .map-core { grid-column:auto; width:170px; }
+      .capability { grid-template-columns:35px 1fr 25px; padding:27px 0; }
+      .capability:hover { padding-inline:7px; }
+      .note-grid { grid-template-columns:1fr; }
+      .note-card.featured { grid-column:auto; }
+      .note-card { min-height:340px; }
+      .note-orbit { width:190px; right:0; top:-65px; }
+      .contact-section h2 { font-size:clamp(52px,17vw,82px); }
+      .contact-aside .button { width:100%; }
+    }
 
-        .button-group {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .contact-btn, .course-btn {
-            display: inline-block;
-            padding: 1rem 2rem;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: transform 0.3s ease;
-            font-weight: 500;
-            text-align: center;
-        }
-
-        .contact-btn {
-            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
-        }
-
-        .course-btn {
-            background: linear-gradient(90deg, #ff6b6b, #ff8e8e);
-        }
-
-        .contact-btn:hover, .course-btn:hover {
-            transform: translateY(-2px);
-        }
-
-        .expertise {
-            margin-top: 3rem;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            text-align: center;
-        }
-
-        .expertise-item {
-            padding: 2rem;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .expertise-item i {
-            font-size: 2rem;
-            color: var(--accent-color);
-            margin-bottom: 1rem;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 1rem;
-            }
-
-            h1 {
-                font-size: 2rem;
-            }
-
-            .social-links {
-                gap: 1.5rem;
-            }
-
-            .expertise {
-                grid-template-columns: 1fr;
-            }
-
-            .button-group {
-                flex-direction: column;
-            }
-
-            .contact-btn, .course-btn {
-                width: 100%;
-            }
-        }
-    </style>
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior:auto; }
+      *, *::before, *::after { animation:none!important; transition:none!important; }
+      [data-reveal] { opacity:1; transform:none; }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="profile-image">
-                <img src="./pic.jpeg" alt="Mohsen Amiribesheli">
-            </div>
-            <h1>Mohsen Amiribesheli</h1>
-            <p class="title">AI Consultancy and Advisory Lead at AI Labs, HCLTech</p>
-            <div class="bio">
-                <p>As the AI Consultancy and Advisory Lead at HCLTech, AI Labs, I drive transformational change by leveraging cutting-edge AI and cloud-native solutions. With a focus on MLOps and Generative AI, I am at the forefront of revolutionising industries such as manufacturing, FinTech, and life sciences. My work empowers organisations to streamline operations, enhance decision-making, and unlock the full potential of AI technologies.</p>
-                
-                <p>Armed with a PhD in AI and a wealth of experience leading global projects, I specialise in orchestrating scalable AI systems that deliver tangible business outcomes. From integrating advanced Generative AI models to pioneering hybrid cloud infrastructures, my work consistently pushes the boundaries of what AI can achieve. I lead high-impact initiatives that optimise workflows, accelerate innovation, and bring strategic value to enterprises.</p>
-                
-                <p>Beyond technical implementation, I am deeply committed to mentoring the next generation of AI leaders and advancing the field through research and thought leadership. Whether through public speaking or academic publications, I aim to inspire and guide the evolution of AI across industries.</p>
-                
-                <p>Please feel free to talk to me about AI-driven transformation, innovative collaborations, or the future of technology.</p>
-            </div>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/mobesheli/" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/mobesheli" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
-                <a href="https://x.com/amirimohsen" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
-                <a href="https://besheli.wordpress.com/" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-wordpress"></i></a>
-                <a href="mailto:besheli@outlook.com" class="social-link"><i class="fas fa-envelope"></i></a>
-                <a href="https://scholar.google.co.uk/citations?user=hm3nTqgAAAAJ&hl=en" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fas fa-graduation-cap"></i></a>
-                <a href="https://www.instagram.com/amirimohsen/" class="social-link" target="_blank">
-                    <i class="fab fa-instagram"></i>
-                </a>
-            </div>
+  <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+    <div class="shell nav-inner">
+      <a class="brand" href="#top" aria-label="besheli.com, home">besheli<span>.com</span></a>
+      <div class="nav-links" id="nav-links">
+        <a href="#thesis">Thesis</a>
+        <a href="#book">Book</a>
+        <a href="#system">Architecture</a>
+        <a href="#work">Work</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="nav-status"><i class="status-dot"></i> London · Available globally</div>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu <i></i></button>
+    </div>
+  </nav>
+
+  <main id="top">
+    <header class="hero shell">
+      <div class="hero-grid">
+        <div class="hero-copy" data-reveal>
+          <p class="eyebrow">Agentic systems · Architecture · Delivery</p>
+          <h1>I engineer<br><em>agency</em> for<br>the enterprise.</h1>
+          <p class="hero-intro"><strong>Mohsen Amiribesheli, PhD.</strong> <strong>Director, AI Labs at HCLTech.</strong> Author and instructor, based in London. I turn autonomous-system ambition into secure, observable and accountable production systems.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#book">Explore the book <span class="arrow">↗</span></a>
+            <a class="button" href="#contact">Start a conversation <span class="arrow">→</span></a>
+          </div>
         </div>
+
+        <div class="portrait-stage" data-reveal data-delay="2">
+          <div class="orbit"></div>
+          <div class="portrait-tag">Human in command</div>
+          <div class="portrait-frame">
+            <img src="portrait.jpeg" alt="Portrait of Mohsen Amiribesheli" width="1024" height="1024">
+            <div class="portrait-caption">
+              <div><strong>Mohsen Amiribesheli</strong><span>Director, AI Labs · HCLTech</span></div>
+              <span>51.5072° N<br>0.1276° W</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-foot" data-reveal data-delay="3">
+        <p>Building systems that can<br>reason, act and answer for it.</p>
+        <a class="scroll-cue" href="#thesis" aria-label="Scroll to thesis">↓</a>
+        <p>Director, AI Labs · HCLTech<br>London, United Kingdom</p>
+      </div>
     </header>
 
-    <main class="container">
-        <div class="expertise">
-            <div class="expertise-item">
-                <i class="fas fa-cogs"></i>
-                <h3>AI & Cloud Solutions</h3>
-                <p>Leading the implementation of cutting-edge AI and cloud-native solutions across manufacturing, FinTech, and life sciences industries</p>
-            </div>
-            <div class="expertise-item">
-                <i class="fas fa-robot"></i>
-                <h3>Generative AI & MLOps</h3>
-                <p>Expertise in implementing and scaling advanced Generative AI models and MLOps solutions for enterprise applications</p>
-            </div>
-            <div class="expertise-item">
-                <i class="fas fa-graduation-cap"></i>
-                <h3>Research & Leadership</h3>
-                <p>PhD in AI with a focus on advancing the field through research, thought leadership, and mentoring future AI leaders</p>
-            </div>
+    <section class="thesis-section" id="thesis">
+      <div class="wide">
+        <div class="thesis-head">
+          <p class="eyebrow" data-reveal>My thesis</p>
+          <p class="statement" data-reveal data-delay="1"><span class="quiet">The next enterprise interface isn't another dashboard.</span> It is an agent that can <mark>make progress</mark> inside clear boundaries, with evidence.</p>
         </div>
 
-        <div class="cta">
-            <p>Let's discuss AI-driven transformation, innovative collaborations, or the future of technology.</p>
-            <div class="button-group">
-                <a href="mailto:besheli@outlook.com" class="contact-btn">Get in Touch</a>
-                <a href="https://kodekloud.com/courses/generative-ai-in-practice-advanced-insights-and-operations" class="course-btn" target="_blank" rel="noopener noreferrer">View My Course</a>
-            </div>
+        <div class="principles">
+          <article class="principle" data-reveal>
+            <span class="num">01 / Agency</span>
+            <h3>Useful autonomy</h3>
+            <p>Agents should own outcomes, not merely generate responses. Every degree of autonomy must earn its place through measurable utility.</p>
+          </article>
+          <article class="principle" data-reveal data-delay="1">
+            <span class="num">02 / Trust</span>
+            <h3>Control by design</h3>
+            <p>Identity, permissions, policy, human approval and auditability belong in the architecture, not in a checklist added before launch.</p>
+          </article>
+          <article class="principle" data-reveal data-delay="2">
+            <span class="num">03 / Evidence</span>
+            <h3>Production truth</h3>
+            <p>A compelling demonstration is only a hypothesis. Traces, evaluations, incidents and business outcomes reveal whether the system works.</p>
+          </article>
         </div>
-    </main>
+      </div>
+    </section>
+
+    <section class="book-section" id="book">
+      <div class="wide">
+        <div class="section-topline" data-reveal>
+          <p class="eyebrow">The book</p>
+          <span class="section-index">01 / 05</span>
+        </div>
+
+        <div class="book-grid">
+          <div class="book-object" data-reveal>
+            <div class="book-cover" role="img" aria-label="Concept cover for Agentic AI Engineering">
+              <span class="cover-kicker">The production field guide</span>
+              <div class="cover-title">Agentic AI<br>Engineering</div>
+              <svg class="cover-map agent-map" viewBox="0 0 270 220" fill="none" aria-hidden="true">
+                <path d="M39 40L134 87L222 34M134 87L206 168M134 87L57 178M57 178L206 168" stroke="#111315" stroke-width="1.7"/>
+                <circle cx="39" cy="40" r="12" fill="#111315"/>
+                <circle cx="222" cy="34" r="12" fill="#111315"/>
+                <circle cx="134" cy="87" r="19" fill="#111315"/>
+                <circle cx="57" cy="178" r="12" fill="#111315"/>
+                <circle cx="206" cy="168" r="12" fill="#111315"/>
+                <circle cx="134" cy="87" r="5" fill="#d8ff4f"/>
+              </svg>
+              <span class="cover-author">Mohsen Amiribesheli, PhD</span>
+            </div>
+          </div>
+
+          <div class="book-content" data-reveal data-delay="1">
+            <h2>Built for the gap between demo and deployment.</h2>
+            <p class="book-deck">A practitioner's guide to designing, shipping and governing agent systems that survive contact with real enterprises.</p>
+            <div class="book-meta">
+              <span class="pill signal">Publishing December 2026</span>
+              <span class="pill">Packt</span>
+              <span class="pill">11 chapters</span>
+            </div>
+            <div class="book-copy">
+              <p>Building an agent demonstration takes an afternoon. Getting one through security review, compliance audit and its first month in production takes far longer.</p>
+              <p><strong>This book writes down what survived real enterprise delivery.</strong> It draws on work across pharma, financial services and manufacturing, so engineers, architects and leaders can skip the most expensive lessons.</p>
+            </div>
+            <div class="hero-actions">
+              <a class="button primary" href="mailto:besheli@outlook.com?subject=Agentic%20AI%20Engineering%20updates">Tell me when it is out <span class="arrow">↗</span></a>
+              <a class="button" href="https://www.linkedin.com/in/mobesheli/" target="_blank" rel="noopener">Follow the writing <span class="arrow">→</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="architecture" id="system">
+      <div class="wide">
+        <div class="architecture-card" data-reveal>
+          <div class="architecture-head">
+            <div>
+              <p class="eyebrow">Reference architecture</p>
+              <h2>Five subsystems. One accountable agent.</h2>
+            </div>
+            <p class="architecture-note">The same production architecture runs through every chapter, turning abstract patterns into an operable system.</p>
+          </div>
+
+          <div class="system-map" aria-label="Five-subsystem agent architecture">
+            <span class="map-line line-1"></span><span class="map-line line-2"></span><span class="map-line line-3"></span><span class="map-line line-4"></span><span class="map-line line-5"></span>
+            <div class="map-core"><span>System 00</span><strong>Agent<br>Runtime</strong></div>
+            <article class="map-node node-1"><small>Subsystem 01</small><h3>Reasoning core</h3><p>How the agent plans, decides and adapts to each job.</p></article>
+            <article class="map-node node-2"><small>Subsystem 02</small><h3>Tool registry</h3><p>What it can touch, under which identity and with what trust.</p></article>
+            <article class="map-node node-3"><small>Subsystem 03</small><h3>Memory</h3><p>What persists, for how long and who else can retrieve it.</p></article>
+            <article class="map-node node-4"><small>Subsystem 04</small><h3>Orchestration</h3><p>How agents route work, hand off and recover from failure.</p></article>
+            <article class="map-node node-5"><small>Subsystem 05</small><h3>Constraints</h3><p>Policy, approvals and evidence that make agency accountable.</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="work-section" id="work">
+      <div class="wide">
+        <div class="work-head">
+          <p class="eyebrow" data-reveal>What I do</p>
+          <div>
+            <h2 class="work-title" data-reveal data-delay="1">From boardroom ambition to <span>operational agency.</span></h2>
+            <p class="work-intro" data-reveal data-delay="2">At HCLTech AI Labs in London, I lead advisory work on agent architecture, governance and enterprise transformation. My work sits at the seam between research and production, where regulation, legacy systems and organisational reality are part of the engineering brief. <strong>I care about what works on Monday morning.</strong></p>
+          </div>
+        </div>
+
+        <div class="capabilities">
+          <article class="capability" data-reveal>
+            <span class="num">01</span>
+            <h3>Agent architecture</h3>
+            <p>Multi-agent systems built on open protocols, designed for observability, testability, interoperability and cost control.</p>
+            <span class="go">↗</span>
+          </article>
+          <article class="capability" data-reveal>
+            <span class="num">02</span>
+            <h3>Governance &amp; assurance</h3>
+            <p>Guardrails, identity, evaluation and oversight that let risk, compliance and security teams say yes with confidence.</p>
+            <span class="go">↗</span>
+          </article>
+          <article class="capability" data-reveal>
+            <span class="num">03</span>
+            <h3>Production strategy</h3>
+            <p>Clear paths from proof of value to reliable operations across regulated, complex and high-stakes environments.</p>
+            <span class="go">↗</span>
+          </article>
+          <article class="capability" data-reveal>
+            <span class="num">04</span>
+            <h3>Executive advisory</h3>
+            <p>Sharper investment decisions: where agents create durable advantage, what they require and what should never be autonomous.</p>
+            <span class="go">↗</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="notes-section" id="notes">
+      <div class="wide">
+        <div class="notes-head">
+          <div data-reveal><p class="eyebrow">Ideas in motion</p><h2>Field notes.</h2></div>
+          <p data-reveal data-delay="1">Writing, research and practical frameworks for people building the next generation of agent systems.</p>
+        </div>
+
+        <div class="note-grid">
+          <a class="note-card featured" href="https://www.linkedin.com/in/mobesheli/" target="_blank" rel="noopener" data-reveal>
+            <span class="note-orbit"></span>
+            <div class="note-type"><span>LinkedIn · Ongoing</span><span>↗</span></div>
+            <div><h3>Production lessons from the front line of agent engineering.</h3><p>Short-form analysis, architecture decisions and field-tested patterns.</p></div>
+          </a>
+          <a class="note-card" href="https://www.youtube.com/@mohsenamirib" target="_blank" rel="noopener" data-reveal data-delay="1">
+            <div class="note-type"><span>YouTube · Watch</span><span>↗</span></div>
+            <div><h3>Agent systems, explained without the theatre.</h3><p>Technical walkthroughs and practical perspectives.</p></div>
+          </a>
+          <a class="note-card" href="https://scholar.google.co.uk/citations?user=hm3nTqgAAAAJ&amp;hl=en" target="_blank" rel="noopener" data-reveal data-delay="2">
+            <div class="note-type"><span>Scholar · Research</span><span>↗</span></div>
+            <div><h3>Research across adaptive and intelligent systems.</h3><p>Peer-reviewed publications and academic work.</p></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="wide">
+        <div class="contact-top">
+          <div data-reveal>
+            <p class="eyebrow">Have an ambitious problem?</p>
+            <h2>Let's give it agency.</h2>
+          </div>
+          <div class="contact-aside" data-reveal data-delay="1">
+            <p>For advisory work, collaborations, speaking or conversations about the book, start here.</p>
+            <a class="button" href="mailto:besheli@outlook.com">besheli@outlook.com <span class="arrow">↗</span></a>
+          </div>
+        </div>
+
+        <footer class="contact-links">
+          <span>© 2026 Mohsen Amiribesheli · London</span>
+          <div>
+            <a href="https://www.linkedin.com/in/mobesheli/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://github.com/mobesheli" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://x.com/amirimohsen" target="_blank" rel="noopener">X</a>
+            <a href="https://besheli.wordpress.com/" target="_blank" rel="noopener">Archive</a>
+            <button class="button" id="copy-email" type="button">Copy email <span class="copy-status" id="copy-status"></span></button>
+          </div>
+        </footer>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const nav = document.getElementById('site-nav');
+    const menuButton = document.getElementById('menu-toggle');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const sections = [...document.querySelectorAll('main section[id]')];
+
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 18), { passive: true });
+
+    menuButton.addEventListener('click', () => {
+      const open = nav.classList.toggle('menu-open');
+      menuButton.setAttribute('aria-expanded', String(open));
+    });
+    navLinks.forEach(link => link.addEventListener('click', () => {
+      nav.classList.remove('menu-open');
+      menuButton.setAttribute('aria-expanded', 'false');
+    }));
+
+    if ('IntersectionObserver' in window) {
+      const revealObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: .12 });
+      document.querySelectorAll('[data-reveal]').forEach(el => revealObserver.observe(el));
+
+      const sectionObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          navLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id));
+        });
+      }, { rootMargin: '-35% 0px -55% 0px' });
+      sections.forEach(section => sectionObserver.observe(section));
+    } else {
+      document.querySelectorAll('[data-reveal]').forEach(el => el.classList.add('visible'));
+    }
+
+    const copyButton = document.getElementById('copy-email');
+    const copyStatus = document.getElementById('copy-status');
+    copyButton.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText('besheli@outlook.com');
+        copyStatus.textContent = 'Copied';
+      } catch (error) {
+        copyStatus.textContent = 'Select email above';
+      }
+      window.setTimeout(() => copyStatus.textContent = '', 1800);
+    });
+  </script>
 </body>
-</html> 
+</html>
