@@ -183,8 +183,8 @@
     }
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.32fr) minmax(330px, .68fr);
-      gap: clamp(40px, 7vw, 110px);
+      grid-template-columns: minmax(0, 1.5fr) minmax(280px, .5fr);
+      gap: clamp(40px, 6vw, 90px);
       align-items: center;
     }
     .hero-copy { position: relative; z-index: 2; }
@@ -229,7 +229,7 @@
     .button .arrow { font-size: 17px; transition: transform .25s ease; }
     .button:hover .arrow { transform: translate(3px,-3px); }
 
-    .portrait-stage { position: relative; z-index: 1; padding: 20px; }
+    .portrait-stage { position: relative; z-index: 1; width: 100%; max-width: 370px; padding: 14px; justify-self: end; }
     .portrait-frame {
       position: relative;
       overflow: hidden;
@@ -569,7 +569,7 @@
     @media (max-width: 1050px) {
       .nav-inner { grid-template-columns:1fr auto; }
       .nav-links { display:none; }
-      .hero-grid { grid-template-columns:minmax(0,1.12fr) minmax(300px,.88fr); gap:45px; }
+      .hero-grid { grid-template-columns:minmax(0,1.35fr) minmax(280px,.65fr); gap:38px; }
       .hero h1 { font-size:clamp(58px,8vw,88px); }
       .principles { grid-template-columns:1fr; }
       .principle, .principle + .principle { padding:28px 0; border-right:0; border-bottom:1px solid var(--line-dark); display:grid; grid-template-columns:80px .6fr 1fr; gap:25px; align-items:start; }
@@ -618,7 +618,7 @@
       .site-nav.menu-open .nav-links a { width:100%; padding:16px 0; border-bottom:1px solid var(--line); }
       .hero { min-height:auto; padding:110px 0 34px; }
       .hero-grid { grid-template-columns:1fr; }
-      .portrait-stage { order:-1; width:min(88%,430px); margin-inline:auto; padding:10px; }
+      .portrait-stage { width:min(70%,320px); margin:28px auto 0; padding:8px; justify-self:center; }
       .portrait-tag { left:-5px; }
       h1 { font-size:clamp(57px,15vw,90px); }
       .hero-foot { grid-template-columns:1fr auto; margin-top:50px; }
@@ -646,7 +646,7 @@
 
     @media (max-width: 560px) {
       .hero-actions .button { width:100%; }
-      .portrait-stage { width:100%; }
+      .portrait-stage { width:min(76%,300px); }
       .portrait-frame { aspect-ratio:.9; }
       .hero h1 { letter-spacing:-.064em; }
       .hero-intro { font-size:16px; }
@@ -709,7 +709,7 @@
           <div class="orbit"></div>
           <div class="portrait-tag">Human in command</div>
           <div class="portrait-frame">
-            <img src="portrait.jpeg" alt="Portrait of Mohsen Amiribesheli" width="1024" height="1024">
+            <img src="portrait.jpeg" alt="Portrait of Mohsen Amiribesheli" width="800" height="800">
             <div class="portrait-caption">
               <div><strong>Mohsen Amiribesheli</strong><span>Director, AI Labs · HCLTech</span></div>
               <span>51.5072° N<br>0.1276° W</span>
